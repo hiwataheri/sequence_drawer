@@ -4,31 +4,20 @@ Create a 2D drawing out of a SMILES input.
 
 Handles the primary functions
 """
+from rdkit import Chem
+from rdkit.Chem import Draw
+from applayer import commandparser
+import argparse
+
+def convert_SMILES_to_Image():
+    parser = argparse.ArgumentParser(description='Parse 2D View')
+    parser.add_argument('user_input_smile')
+    args = parser.parse_args()
+    s=args.user_input_smile
+    drawthis=Chem.MolFromSmiles(s)
+    image_of_user_molecule = Draw.MolToFile(drawthis,'./data/pictureofmolecule.png', size=(900,900))
+    return image_of_user_molecule
 
 
-def canvas(with_attribution=True):
-    """
-    Placeholder function to show example docstring (NumPy format)
-
-    Replace this function and doc string for your own project
-
-    Parameters
-    ----------
-    with_attribution : bool, Optional, default: True
-        Set whether or not to display who the quote is from
-
-    Returns
-    -------
-    quote : str
-        Compiled string including quote and optional attribution
-    """
-
-    quote = "The code is but a canvas to our imagination."
-    if with_attribution:
-        quote += "\n\t- Adapted from Henry David Thoreau"
-    return quote
-
-
-if __name__ == "__main__":
-    # Do something if this file is invoked on its own
-    print(canvas())
+'''if __name__ == "__main__":
+    convert_SMILES_to_Image()'''
