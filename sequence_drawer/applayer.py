@@ -7,8 +7,8 @@ def commandparser():
 	parser = argparse.ArgumentParser(description='Parse 2D View')
 	parser.add_argument('smile')
 	args = parser.parse_args()
-	user_input_smile=args.smile
-	return user_input_smile
+	smiles=args.smile
+	return smiles
 
 def display():
 	window=tk.Tk()
@@ -23,8 +23,8 @@ def display():
 	window.mainloop()
 
 if __name__ == '__main__':
-	commandparser()
+	smiles = commandparser()
 	import drawer
-	drawer.convert_SMILES_to_Image()
+	drawer.convert_SMILES_to_Image(smiles)
 	display()
 

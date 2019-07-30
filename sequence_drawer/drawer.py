@@ -7,14 +7,14 @@ Handles the primary functions
 from rdkit import Chem
 from rdkit.Chem import Draw
 from applayer import commandparser
-import argparse
+#import argparse
 
-def convert_SMILES_to_Image():
-    parser = argparse.ArgumentParser(description='Parse 2D View')
-    parser.add_argument('user_input_smile')
-    args = parser.parse_args()
-    s=args.user_input_smile
-    drawthis=Chem.MolFromSmiles(s)
+def convert_SMILES_to_Image(smiles):
+    #parser = argparse.ArgumentParser(description='Parse 2D View')
+    #parser.add_argument('user_input_smile')
+    #args = parser.parse_args()
+    #s=args.user_input_smile
+    drawthis=Chem.MolFromSmiles(smiles)
     image_of_user_molecule = Draw.MolToFile(drawthis,'./data/pictureofmolecule.png', size=(900,900))
     return image_of_user_molecule
 
