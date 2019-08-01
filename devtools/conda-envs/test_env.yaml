@@ -1,5 +1,6 @@
 name: test
 channels:
+    #don't forget to add this channel!
   - rdkit
 dependencies:
     # Base depends
