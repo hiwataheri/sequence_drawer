@@ -39,6 +39,10 @@ install:
   - conda activate test
     # Build and install package
   - python setup.py develop --no-deps
+    #Create conda environment with RDKit installed
+  - conda create -c rdkit -n my-rdkit-env rdkit
+    #Activate the new RDKit evironment
+  - conda activate my-rdkit-env
 
 
 script:

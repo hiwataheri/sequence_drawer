@@ -1,13 +1,18 @@
+"""
+applayer.py
+Get's Input as a SMILES from the User and gives back a 2D Picture 
+generated with drawer.py
+"""
 import argparse
 import tkinter as tk
 from PIL import ImageTk, Image
 
 
-def commandparser():
+def command_parser():
     parser = argparse.ArgumentParser(description="Parse 2D View")
-    parser.add_argument("smile")
+    parser.add_argument("smiles")
     args = parser.parse_args()
-    smiles = args.smile
+    smiles = args.smiles
     return smiles
 
 
@@ -16,8 +21,8 @@ def display():
     window.title("Your molecule")
     window.geometry("900x900")
     window.configure(background="white")
-    windowimg = Image.open("./data/pictureofmolecule.png")
-    ph = ImageTk.PhotoImage(windowimg)
+    window_img = Image.open("./data/pictureofmolecule.png")
+    ph = ImageTk.PhotoImage(window_img)
     panel = tk.Label(window, image=ph)
     panel.image = ph
     panel.pack(side="bottom", fill="both", expand="yes")
@@ -25,8 +30,8 @@ def display():
 
 
 if __name__ == "__main__":
-    smiles = commandparser()
+    smiles = CommandParser()
     import drawer
 
-    drawer.convert_SMILES_to_Image(smiles)
+    drawer.convert_smiles_to_image(smiles)
     display()
