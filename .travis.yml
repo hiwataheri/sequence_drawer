@@ -30,6 +30,16 @@ before_install:
     # Install the Python environment
   - source devtools/travis-ci/before_install.sh
   - python -V
+    # download and install miniconda
+  - wget http://repo.continuum.io/miniconda/Miniconda3-4.1.11-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/conda
+  - export PATH="$HOME/conda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+    # create and activate the build/test environment
+  - conda create -q -n tenv python=$TRAVIS_PYTHON_VERSION pip cmake
+  - source activate tenv
 
 install:
 
@@ -39,11 +49,13 @@ install:
   - conda activate test
     # Build and install package
   - python setup.py develop --no-deps
-    #Create conda environment with RDKit installed
-  - conda create -c rdkit -n my-rdkit-env rdkit
-    #Activate the new RDKit evironment
-  - conda activate my-rdkit-env
+    # install the most recent rdkit package from the RDKit anaconda channel.
+  - conda install -q -c rdkit rdkit
 
+before_script:
+    # RDKit
+  - export RDBASE=$CONDA_PREFIX/Library/share/RDKit
+  - echo $RDBASE
 
 script:
   - pytest -v --cov=sequence_drawer sequence_drawer/tests/
