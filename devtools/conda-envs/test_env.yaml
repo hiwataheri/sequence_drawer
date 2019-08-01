@@ -4,11 +4,11 @@ dependencies:
     # Base depends
   - python
   - pip
-  -rdkit
 
     # Testing
   - pytest
   - pytest-cov
+  -rdkit
 
   # Pip-only installs
   - pip:
