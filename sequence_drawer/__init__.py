@@ -4,6 +4,7 @@ Create a 2D drawing out of a SMILES input.
 """
 
 # Add imports here
+from .applayer import *
 from .drawer import *
 
 # Handle versioneer
