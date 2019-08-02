@@ -42,6 +42,7 @@ install:
 
 
 script:
+  -python applayer 'CC(C)c1c(C(=O)Nc2ccccc2)c(c(c3ccc(F)cc3)n1CC[C@@H]4C[C@@H](O)CC(=O)O4)c5ccccc5'
   - pytest -v --cov=sequence_drawer sequence_drawer/tests/
 
 notifications:

@@ -27,11 +27,13 @@ def display():
     panel.image = ph
     panel.pack(side="bottom", fill="both", expand="yes")
     window.mainloop()
+    return 1
 
 
 if __name__ == "__main__":
-    smiles = CommandParser()
+    smiles = command_parser()
     import drawer
 
     drawer.convert_smiles_to_image(smiles)
     display()
+
