@@ -2,12 +2,13 @@ name: test
 channels:
     #don't forget to add this channel!
   - rdkit
-  - cv2
-  - numpy
+
 dependencies:
     # Base depends
   - python
   - pip
+  - cv2
+  - numpy
 
     # Testing
   - pytest
