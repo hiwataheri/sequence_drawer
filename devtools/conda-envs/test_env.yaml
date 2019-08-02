@@ -2,20 +2,21 @@ name: test
 channels:
     #don't forget to add this channel!
   - rdkit
-  - opencv-python
-  - numpy
 
 dependencies:
     # Base depends
   - python
   - pip
-
+  
     # Testing
   - pytest
   - pytest-cov
   - rdkit
 
+
   # Pip-only installs
   - pip:
     - codecov
+    - opencv-python
+    - numpy
 
