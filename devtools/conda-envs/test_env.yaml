@@ -2,6 +2,8 @@ name: test
 channels:
     #don't forget to add this channel!
   - rdkit
+  - opencv-python
+  - numpy
 
 dependencies:
     # Base depends
