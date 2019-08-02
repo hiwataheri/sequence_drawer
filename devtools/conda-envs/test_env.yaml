@@ -7,8 +7,6 @@ dependencies:
     # Base depends
   - python
   - pip
-  - cv2
-  - numpy
 
     # Testing
   - pytest
