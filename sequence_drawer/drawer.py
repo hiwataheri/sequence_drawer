@@ -15,7 +15,8 @@ def convert_smiles_to_image(smiles):
     image_of_user_molecule = Draw.MolToFile(
         draw_this, "./data/pictureofmolecule.png", size=(900, 900)
     )
-    test_image = Draw.MolToFile(draw_this, "./tests/data/pictureofmolecule.png", size=(900,900)
+    test_image = Draw.MolToFile(
+        draw_this, "./tests/data/pictureofmolecule.png", size=(900, 900)
     )
     return image_of_user_molecule
     return test_image

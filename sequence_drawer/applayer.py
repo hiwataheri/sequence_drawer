@@ -36,4 +36,3 @@ if __name__ == "__main__":
 
     drawer.convert_smiles_to_image(smiles)
     display()
-

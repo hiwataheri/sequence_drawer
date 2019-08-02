@@ -29,5 +29,5 @@ def compare_images_task():
         return 1
 
 
-if __name__ == '__main__':
-	compare_images_task()
+if __name__ == "__main__":
+    compare_images_task()
