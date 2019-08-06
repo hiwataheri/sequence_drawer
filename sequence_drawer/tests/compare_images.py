@@ -2,31 +2,26 @@ import cv2
 import numpy as np
 
 
-original = cv2.imread("./data/test_image.png")
-duplicate = cv2.imread("./data/pictureofmolecule.png")
-
-
-"""if original.shape == duplicate.shape:
-	print("The images have same size and channels")
-difference = cv2.subtract(original, duplicate)
-b, g, r = cv2.split(difference)
-if cv2.countNonZero(b) == 0 and cv2.countNonZero(g) == 0 and cv2.countNonZero(r) == 0:
-	print("The images are completely Equal")"""
-
-
-def compare_images_task():
-    if original.shape == duplicate.shape:
-        print("same")
-    difference = cv2.subtract(original, duplicate)
+def compare_images_task(image_a, image_b):
+    image_a = cv2.imread(str(image_a))
+    image_b = cv2.imread(str(image_b))
+    if image_a.shape != image_b.shape:
+        return False
+    difference = cv2.subtract(image_a, image_b)
     b, g, r = cv2.split(difference)
     if (
         cv2.countNonZero(b) == 0
         and cv2.countNonZero(g) == 0
         and cv2.countNonZero(r) == 0
     ):
-        print("equal")
-        return 0
+        return True
+    return False
 
 
 if __name__ == "__main__":
-    compare_images_task()
+    from pathlib import Path
+
+    HERE = Path(__file__).parent
+    original = HERE / "data/test_image.png"
+    duplicate = HERE / "data/pictureofmolecule.png"
+    assert compare_images_task(original, duplicate)

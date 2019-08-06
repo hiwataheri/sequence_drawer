@@ -7,16 +7,10 @@ Functions and Variables = lower_case_with_underscores
 """
 from rdkit import Chem
 from rdkit.Chem import Draw
-from applayer import command_parser
+from .applayer import command_parser
 
 
-def convert_smiles_to_image(smiles):
+def convert_smiles_to_image(smiles, path="image.png"):
     draw_this = Chem.MolFromSmiles(smiles)
-    image_of_user_molecule = Draw.MolToFile(
-        draw_this, "./data/pictureofmolecule.png", size=(900, 900)
-    )
-    test_image = Draw.MolToFile(
-        draw_this, "./tests/data/pictureofmolecule.png", size=(900, 900)
-    )
-    return image_of_user_molecule
-    return test_image
+    image_of_user_molecule = Draw.MolToFile(draw_this, path, size=(900, 900))
+    return path
