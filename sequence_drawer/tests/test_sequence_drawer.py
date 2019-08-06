@@ -4,7 +4,7 @@ Unit and regression test for the sequence_drawer package.
 
 # Import package, test suite, and other packages as needed
 import sequence_drawer
-from compare_images import compare_images_task
+from .compare_images import compare_images_task
 import pytest
 import sys
 
