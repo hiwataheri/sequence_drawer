@@ -7,7 +7,6 @@ import sequence_drawer
 from compare_images import compare_images_task
 import pytest
 import sys
-from sequence_drawer import applayer
 
 
 def test_sequence_drawer_imported():
@@ -16,4 +15,4 @@ def test_sequence_drawer_imported():
 
 
 def test_compare_test_image():
-    assert compare_images_task() == 1
+    assert compare_images_task() == 0

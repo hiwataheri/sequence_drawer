@@ -25,7 +25,7 @@ def compare_images_task():
         and cv2.countNonZero(r) == 0
     ):
         print("equal")
-        return 1
+        return 0
 
 
 if __name__ == "__main__":
