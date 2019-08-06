@@ -1,7 +1,7 @@
 Sequence Drawer
 ==============================
 [//]: # (Badges)
-[![Travis Build Status](https://travis-ci.com/Allend95/sequence_drawer.png)(https://travis-ci.com/Allend95/sequence_drawer)]
+[![Travis Build Status]https://travis-ci.com/Allend95/sequence_drawer.svg?branch=master](https://travis-ci.com/Allend95/sequence_drawer)]
 [![codecov](https://codecov.io/gh/Allend95/sequence_drawer/branch/master/graph/badge.svg)](https://codecov.io/gh/Allend95/sequence_drawer/branch/master)
 
 Create a 2D drawing out of a SMILES input.
