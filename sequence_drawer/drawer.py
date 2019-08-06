@@ -10,7 +10,7 @@ from rdkit.Chem import Draw
 from .applayer import command_parser
 
 
-def convert_smiles_to_image(smiles, path="image.png"):
+def convert_smiles_to_image(smiles, path="image.png", size=(900, 900)):
     user_smiles = Chem.MolFromSmiles(smiles)
-    image_of_user_molecule = Draw.MolToFile(user_smiles, path, size=(900, 900))
+    image_of_user_molecule = Draw.MolToFile(user_smiles, path, size)
     return path
