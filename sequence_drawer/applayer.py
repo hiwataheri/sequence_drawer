@@ -16,16 +16,25 @@ def command_parser():
     return smiles
 
 
-def display(title="Your molecule", geometry="900x900"):
+def display(
+    title="Your molecule",
+    geometry="900x900",
+    background="white",
+    path="./data/pictureofmolecule.png",
+    image="ph",
+    side="bottom",
+    fill="both",
+    expand="yes",
+):
     window = tk.Tk()
     window.title(title)
     window.geometry(geometry)
-    window.configure(background="white")
-    window_img = Image.open("./data/pictureofmolecule.png")
+    window.configure(background)
+    window_img = Image.open(path)
     ph = ImageTk.PhotoImage(window_img)
-    panel = tk.Label(window, image=ph)
+    panel = tk.Label(window, image)
     panel.image = ph
-    panel.pack(side="bottom", fill="both", expand="yes")
+    panel.pack(side, fill, expand)
     window.mainloop()
     return 1
 
