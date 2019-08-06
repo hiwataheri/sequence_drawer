@@ -10,6 +10,9 @@ Welcome to Sequence Drawer's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   /intro/chapter1
+   /intro/chapter2
+
 
 
 Indices and tables
